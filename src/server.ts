@@ -67,6 +67,11 @@ app.get("/ponies", (req, res) => {
   });
 });
 
+app.get("/ponies/random", (req, res) => {
+  const randomPony = pickRandom(ponyData.members);
+  res.json(randomPony);
+})
+
 app.get("/season-one", (req, res) => {
   res.json({
     countedAsHit: false,
